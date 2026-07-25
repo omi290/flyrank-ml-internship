@@ -1,1 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Refresh Prioritization using Historical Search Signals | FlyRank ML Internship</title>
 
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="container">
+
+<h1>
+Content Refresh Prioritization using Historical Search Visibility and Engagement Signals
+</h1>
+
+<p class="subtitle">
+FlyRank ML Internship Capstone Research
+</p>
+
+<p class="author">
+<strong>Om Prakash Barmola</strong><br>
+B.Tech Computer Science (AI & DS)<br>
+Graphic Era Hill University
+</p>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<section>
+
+<h2>Abstract</h2>
+
+<p>
+
+This project investigates whether historical search visibility and user engagement metrics can support content refresh prioritization using the FlyRank ML Internship Warehouse dataset. Historical Google Search Console and Google Analytics 4 signals from the March 2026 warehouse release were analyzed to understand relationships between search visibility and user engagement. A transparent rule-based prioritization workflow was developed using only historical features while excluding future information and leakage-prone variables. The analysis demonstrates that combining multiple historical signals provides a practical way to prioritize pages for editorial review. The workflow is intended as a decision-support system rather than an automated publishing or prediction system.
+
+</p>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>Research Question</h2>
+
+<p>
+
+Can historical search visibility and engagement signals be used to prioritize content refresh opportunities while maintaining transparent, reproducible, and leakage-aware analysis?
+
+</p>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>Introduction</h2>
+
+<p>
+
+Large websites often contain thousands of pages, making it difficult for editorial teams to decide which content should be updated first. Search visibility and user engagement metrics provide valuable historical evidence about how pages perform, but those signals must be interpreted carefully.
+
+</p>
+
+<p>
+
+The objective of this project is to develop a reproducible workflow that transforms historical search performance data into an evidence-based prioritization framework. Rather than predicting future rankings, the workflow identifies pages that deserve human review using observed historical signals.
+
+</p>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>Dataset</h2>
+
+<table>
+
+<tr>
+<th>Dataset</th>
+<td>FlyRank ML Internship Warehouse</td>
+</tr>
+
+<tr>
+<th>Release</th>
+<td>March 2026</td>
+</tr>
+
+<tr>
+<th>Main Table</th>
+<td>fact_content_daily_performance</td>
+</tr>
+
+<tr>
+<th>Filter</th>
+<td>GA4 data available only</td>
+</tr>
+
+<tr>
+<th>Features</th>
+<td>
+
+<ul>
+
+<li>Google Search Impressions</li>
+
+<li>Google Search Clicks</li>
+
+<li>Average Search Position</li>
+
+<li>GA4 Pageviews</li>
+
+<li>GA4 Sessions</li>
+
+<li>Scroll Events</li>
+
+</ul>
+
+</td>
+
+</tr>
+
+</table>
+
+<h3>Excluded Information</h3>
+
+<ul>
+
+<li>Client identifiers</li>
+
+<li>Content identifiers as predictive features</li>
+
+<li>Future-window information</li>
+
+<li>Label-derived variables</li>
+
+</ul>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>Methodology</h2>
+
+<ol>
+
+<li>
+Constructed a feature vector using historical search and engagement metrics.
+</li>
+
+<li>
+Performed exploratory signal analysis to understand relationships among features.
+</li>
+
+<li>
+Built a rule-based prioritization baseline using historical observations.
+</li>
+
+<li>
+Validated assumptions through leakage auditing and feature review.
+</li>
+
+<li>
+Converted validated outputs into a ranked editorial action playbook.
+</li>
+
+</ol>
+
+<p>
+
+The workflow intentionally avoids causal claims and focuses on transparent decision support.
+
+</p>
+
+</section>
+
+<hr>
+<section>
+
+<h2>Results</h2>
+
+<p>
+
+The exploratory analysis identified meaningful relationships between historical search visibility and user engagement metrics. Instead of building a fully supervised prediction model, the project focused on transparent signal analysis and rule-based prioritization because the internship dataset did not provide an observed target label suitable for supervised learning.
+
+</p>
+
+<div class="card">
+
+<h3>Key Findings</h3>
+
+<ul>
+
+<li>Pages with higher search impressions generally received more clicks.</li>
+
+<li>Engagement metrics such as sessions and pageviews complemented search visibility signals.</li>
+
+<li>Combining multiple historical signals produced more informative rankings than relying on a single metric.</li>
+
+<li>The resulting action queue is intended for editorial review rather than automated decision-making.</li>
+
+</ul>
+
+</div>
+
+<h3>Priority Ranking Visualization</h3>
+
+<img src="top10_priority.png"
+     alt="Top 10 Priority Content"
+     class="chart">
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>Limitations</h2>
+
+<ul>
+
+<li>This analysis uses only the March 2026 warehouse release.</li>
+
+<li>No observed supervised target label was available.</li>
+
+<li>Results describe historical relationships rather than causal effects.</li>
+
+<li>The workflow supports human decision-making and should not be interpreted as an automated publishing system.</li>
+
+<li>Editorial judgment remains essential before any content changes are implemented.</li>
+
+</ul>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>Ranked Recommendations</h2>
+
+<table>
+
+<tr>
+<th>Priority</th>
+<th>Recommended Action</th>
+<th>Reason</th>
+</tr>
+
+<tr>
+<td>High</td>
+<td>Refresh Content</td>
+<td>Strong visibility with meaningful engagement suggests updating content may preserve or improve performance.</td>
+</tr>
+
+<tr>
+<td>Medium</td>
+<td>Manual Review</td>
+<td>Mixed signals require editorial assessment before changes are made.</td>
+</tr>
+
+<tr>
+<td>Low</td>
+<td>Monitor</td>
+<td>Continue observing historical trends before investing additional effort.</td>
+</tr>
+
+</table>
+
+<div class="card">
+
+<h3>What Should NOT Be Automated</h3>
+
+<ul>
+
+<li>Publishing new content</li>
+
+<li>Deleting pages</li>
+
+<li>Redirecting URLs</li>
+
+<li>Automatically rewriting articles</li>
+
+<li>Making editorial decisions without human review</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>Reproducibility</h2>
+
+<p>
+
+All notebooks, code, exported artifacts, and documentation are available in the GitHub repository created during the FlyRank ML Internship. The workflow can be reproduced by running the notebooks in sequence, starting with the warehouse data loading step and ending with the Action Playbook.
+
+</p>
+
+<p>
+
+Repository:
+<strong>
+<a href="https://github.com/omi290/flyrank-ml-internship" target="_blank">
+github.com/omi290/flyrank-ml-internship
+</a>
+</strong>
+
+</p>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>Acknowledgments</h2>
+
+<p>
+
+This project was completed as part of the <strong>FlyRank ML Internship</strong>.
+
+</p>
+
+<p>
+
+Built on the FlyRank ML Internship dataset.
+
+</p>
+
+<p>
+
+Data Credit:
+<a href="https://flyrank.ai" target="_blank">
+https://flyrank.ai
+</a>
+
+</p>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Om Prakash Barmola
+
+</p>
+
+</footer>
+
+</main>
+
+</body>
+
+</html>
