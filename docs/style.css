@@ -1,1 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: "Inter", sans-serif;
+    background: #f4f6f9;
+    color: #222;
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.hero {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: white;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: "Merriweather", serif;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.author {
+    margin-top: 25px;
+    font-size: 1rem;
+}
+
+section {
+    background: white;
+    margin: 35px 0;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.08);
+}
+
+h2 {
+    color: #1d4ed8;
+    margin-bottom: 18px;
+    font-size: 2rem;
+}
+
+h3 {
+    margin: 18px 0;
+    color: #0f172a;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+ul,
+ol {
+    margin-left: 25px;
+    margin-bottom: 18px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.card {
+    background: #eef5ff;
+    border-left: 6px solid #2563eb;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+}
+
+.chart {
+    width: 100%;
+    max-width: 900px;
+    display: block;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.15);
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: #ddd;
+    margin: 40px 0;
+}
+
+footer {
+    text-align: center;
+    color: #666;
+    padding: 40px 0;
+    font-size: .95rem;
+}
+
+@media (max-width: 768px) {
+
+.hero h1 {
+    font-size: 2rem;
+}
+
+section {
+    padding: 20px;
+}
+
+table {
+    display: block;
+    overflow-x: auto;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+}
